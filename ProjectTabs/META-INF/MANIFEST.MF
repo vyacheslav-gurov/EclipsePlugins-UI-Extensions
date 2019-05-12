@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ProjectTabs
+Bundle-SymbolicName: org.evilbit.tabs;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources;bundle-version="3.13.100",
+ org.eclipse.ui.navigator;bundle-version="3.7.200"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Automatic-Module-Name: org.evilbit.tabs
+Bundle-ActivationPolicy: lazy

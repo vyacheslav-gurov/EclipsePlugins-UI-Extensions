@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+<!-- Simple View -->
+	<extension
+         point="org.eclipse.ui.views">
+      <category
+            id="org.evilbit.simpleview.CategoryId"
+            name="Category Simple View">
+      </category>
+      <view
+            category="org.evilbit.simpleview.CategoryId"
+            class="org.evilbit.simpleview.SimpleViewClass"
+            icon="icons/sample.png"
+            id="org.evilbit.simpleview.SimpleViewId"
+            name="Simple View"
+            restorable="true">
+      </view>
+   </extension>
+
+<!-- Property Page -->
+	<extension
+         point="org.eclipse.ui.propertyPages">
+      <page
+            class="org.evilbit.propertypage.PropertyPageClass"
+            id="org.evilbit.propertypage.PropertyPageId"
+            name="Sample PropertyPage">
+         <enabledWhen>
+            <adapt
+                  type="org.eclipse.core.resources.IProject">
+            </adapt>
+         </enabledWhen>
+      </page>
+	</extension>
+	
+<!-- Project Explorer view & Properties Tree view -->
+	<extension
+         point="org.eclipse.ui.views">
+      <category
+            id="org.evilbit.navigator.views.CategoryID"
+            name="Category custom plugin views">
+      </category>
+      <view
+            category="org.evilbit.navigator.views.CategoryID"
+            class="org.evilbit.navigator.views.ProjectExplorer"
+            icon="icons/sample.png"
+            id="org.evilbit.navigator.views.ProjectExplorerId"
+            name="Project Explorer"
+            restorable="true">
+      </view>
+   </extension>
+   
+ <extension
+       point="org.eclipse.ui.navigator.viewer">
+    <viewer
+          viewerId="org.evilbit.navigator.views.ProjectExplorerId">
+    </viewer>
+    <viewerContentBinding
+          viewerId="org.evilbit.navigator.views.ProjectExplorerId">
+       <includes>
+          <contentExtension
+                pattern="org.eclipse.ui.navigator.resourceContent">
+          </contentExtension>
+       </includes>
+    </viewerContentBinding>
+    <viewerActionBinding
+          viewerId="org.evilbit.navigator.views.ProjectExplorerId">
+       <includes>
+          <actionExtension
+                pattern="org.eclipse.ui.navigator.resources.*">
+          </actionExtension>
+       </includes>
+    </viewerActionBinding>
+ </extension>
+   
+</plugin>

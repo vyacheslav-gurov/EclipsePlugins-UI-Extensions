@@ -37,3 +37,21 @@ Eclipse EE Version: 2018-09 (4.9.0) Java 1.8.0_191
 Результат:
 
 ![Picture](Images/navigatorview1.jpg)
+
+#### 2. [Добавляем фильтр в Common navigator](https://github.com/firstevilbit/EclipsePlugins-UI-Extensions/tree/master/ProjectTabs/src/org/evilbit/navigator/filters)
+Дбавляем расширение org.eclipse.ui.navigator.navigatorContent. Указываем класс NavigatorFilter расширяющий **org.eclipse.jface.viewers.ViewerFilter**. Настроем фильтрацию в классе NavigatorFilter, скроем отображение Java-проектов.
+
+Первоисточник: http://codexe.net/eclipse/add-filter-to-common-navigator.html
+
+Результат:
+
+![Picture](Images/navigatorview2.jpg)
+
+#### 3. [Добавление своего контента в Common navigator](https://github.com/firstevilbit/EclipsePlugins-UI-Extensions/tree/master/ProjectTabs/src/org/evilbit/navigator/views/navigator)
+Сделаем некоторые настройки в org.eclipse.ui.navigator.viewer и org.eclipse.ui.navigator.navigatorContent. Суть настроек заключается в следующем: Common navigator будет отображать ресурсные объекты (то что у нас уже отображается) и наш собственный тип PropertiesTreeData. NavigatorContentProvider будет создавать наши узлы типа PropertiesTreeData, а NavigatorLabelProvider иконки и лейблы.
+
+Первоисточник: http://codexe.net/eclipse/add-contents-to-common-navigator.html
+
+Результат:
+
+![Picture](Images/navigatorview3.jpg)

@@ -65,6 +65,9 @@
           <contentExtension
                 pattern="CustomPlugin.filters.NavigatorFilter">
           </contentExtension>
+          <contentExtension
+                pattern="CustomPlugin.views.navigator.NavigatorContent">
+          </contentExtension>
        </includes>
     </viewerContentBinding>
     <viewerActionBinding
@@ -84,6 +87,33 @@
           id="CustomPlugin.filters.NavigatorFilter"
           name="NavigatorFilter">
     </commonFilter>
+    <navigatorContent
+          activeByDefault="true"
+          contentProvider="org.evilbit.navigator.views.navigator.NavigatorContentProvider"
+          id="CustomPlugin.views.navigator.NavigatorContent"
+          labelProvider="org.evilbit.navigator.views.navigator.NavigatorLabelProvider"
+          name="Navigator Content"
+          priority="normal">
+       <triggerPoints>
+          <or>
+             <instanceof
+                   value="org.eclipse.core.resources.IResource">
+             </instanceof>
+             <and>
+                <instanceof
+                      value="org.evilbit.navigator.views.navigator.data.PropertiesTreeData">
+                </instanceof>
+             </and>
+          </or>
+       </triggerPoints>
+       <possibleChildren>
+          <or>
+             <instanceof
+                   value="org.evilbit.navigator.views.navigator.data.PropertiesTreeData">
+             </instanceof>
+          </or>
+       </possibleChildren>
+    </navigatorContent>
  </extension>
    
 </plugin>

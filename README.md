@@ -1,6 +1,7 @@
 # Eclipse Plugins (UI-Extensions)
 
 В этом репозитории я собираю исходники для Plug-in Project Eclipse, демонстрирующие создание/настройку различных UI-расширений для Eclipse. Материал рассчитан главным образом для начинающих. 
+
 Eclipse EE Version: 2018-09 (4.9.0) Java 1.8.0_191
 
 1. [View](#1-View)

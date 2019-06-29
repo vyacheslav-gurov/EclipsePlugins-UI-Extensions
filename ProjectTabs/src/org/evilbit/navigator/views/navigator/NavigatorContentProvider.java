@@ -1,9 +1,9 @@
 package org.evilbit.navigator.views.navigator;
 
-import org.eclipse.core.resources.IFile;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
-import org.evilbit.navigator.views.navigator.data.PropertiesTreeData;
+import org.evilbit.navigator.views.navigator.data.PropertiesTreeParentData;
+import org.evilbit.navigator.views.navigator.data.PropertiesTreeRootData;
 
 public class NavigatorContentProvider implements ITreeContentProvider {
 
@@ -28,12 +28,10 @@ public class NavigatorContentProvider implements ITreeContentProvider {
 	@Override
 	public Object[] getChildren(Object parentElement) {
 		// TODO Auto-generated method stub
-		// if the parent element is IFile, add a PropertiesTreeData as child node
-		if (parentElement instanceof IFile) {
-			IFile file = (IFile) parentElement;
-			String name = file.getName() + "[Tree Data]";
-			PropertiesTreeData propertiesTreeData = new PropertiesTreeData(name, file, file.getProject());
-			return new Object[] { propertiesTreeData };
+		if (parentElement instanceof PropertiesTreeRootData) {
+			return ((PropertiesTreeRootData) parentElement).getParentNodes();
+		} else if (parentElement instanceof PropertiesTreeParentData) {
+			return ((PropertiesTreeParentData) parentElement).getChildren();
 		}
 		return null;
 	}
@@ -47,7 +45,7 @@ public class NavigatorContentProvider implements ITreeContentProvider {
 	@Override
 	public boolean hasChildren(Object element) {
 		// TODO Auto-generated method stub
-		if (element instanceof IFile) {
+		if (element instanceof PropertiesTreeParentData) {
 			return true;
 		}
 		return false;

@@ -104,12 +104,17 @@
                       value="org.evilbit.navigator.views.navigator.data.PropertiesTreeData">
                 </instanceof>
              </and>
+             <and>
+                <instanceof
+                      value="org.evilbit.navigator.views.navigator.data.PropertiesTreeRootData">
+                </instanceof>
+             </and>
           </or>
        </triggerPoints>
        <possibleChildren>
           <or>
              <instanceof
-                   value="org.evilbit.navigator.views.navigator.data.PropertiesTreeData">
+                   value="org.evilbit.navigator.views.navigator.data.*">
              </instanceof>
           </or>
        </possibleChildren>

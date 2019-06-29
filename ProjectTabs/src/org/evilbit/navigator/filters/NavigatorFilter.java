@@ -1,9 +1,9 @@
 package org.evilbit.navigator.filters;
 
-import org.eclipse.core.resources.IProject;
-import org.eclipse.core.runtime.CoreException;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
+import org.evilbit.navigator.views.navigator.data.PropertiesTreeData;
+import org.evilbit.navigator.views.navigator.data.PropertiesTreeRootData;
 
 public class NavigatorFilter extends ViewerFilter {
 
@@ -14,18 +14,13 @@ public class NavigatorFilter extends ViewerFilter {
 	@Override
 	public boolean select(Viewer viewer, Object parentElement, Object element) {
 		// TODO Auto-generated method stub
-		if (element instanceof IProject) {
-			IProject prj = (IProject) element;
-			try {
-				if (prj.hasNature("org.eclipse.jdt.core.javanature")) {//org.eclipse.jdt.core.javanature is the nature id of Java project
-					return false;
-				}
-			} catch (CoreException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+		if (element instanceof PropertiesTreeData) {
+			return true;
 		}
-		return true;
+		if (element instanceof PropertiesTreeRootData) {
+			return true;
+		}
+		return false;
 	}
 
 }

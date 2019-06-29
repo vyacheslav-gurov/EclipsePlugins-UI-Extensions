@@ -55,3 +55,13 @@ Eclipse EE Version: 2018-09 (4.9.0) Java 1.8.0_191
 Результат:
 
 ![Picture](Images/navigatorview3.jpg)
+
+#### 4. [Отображение пользовательских данных в Common navigator](https://github.com/firstevilbit/EclipsePlugins-UI-Extensions/tree/master/ProjectTabs/src/org/evilbit/navigator/views/navigator/data)
+Создадим собственную структуру данных, дочерний узел будет описан в классе PropertiesTreeData, а родительский в классе PropertiesTreeParentData расширенный от PropertiesTreeData. Структура данных создаст класс PropertiesTreeRootData. 
+Также необходимо внести небольшие изменения в уже существующие классы, такие как: NavigatorContentProvider, NavigatorLabelProvider и NavigatorFilter. 
+
+Первоисточник: http://codexe.net/eclipse/show-custom-data-on-navigator.html
+
+Результат:
+
+![Picture](Images/navigatorview4.jpg)

@@ -55,6 +55,12 @@
        point="org.eclipse.ui.navigator.viewer">
     <viewer
           viewerId="org.evilbit.navigator.views.ProjectExplorerId">
+       <popupMenu
+             id="org.evilbit.navigator.views.ProjectExplorerId#PopupMenu">
+          <insertionPoint
+                name="group.add">
+          </insertionPoint>
+       </popupMenu>
     </viewer>
     <viewerContentBinding
           viewerId="org.evilbit.navigator.views.ProjectExplorerId">
@@ -75,6 +81,9 @@
        <includes>
           <actionExtension
                 pattern="org.eclipse.ui.navigator.resources.*">
+          </actionExtension>
+          <actionExtension
+                pattern="customplugin.views.navigator.NavigatorActionProvider">
           </actionExtension>
        </includes>
     </viewerActionBinding>
@@ -114,11 +123,22 @@
        <possibleChildren>
           <or>
              <instanceof
-                   value="org.evilbit.navigator.views.navigator.data.*">
+                   value="org.evilbit.navigator.views.navigator.data.PropertiesTreeData">
              </instanceof>
           </or>
        </possibleChildren>
     </navigatorContent>
+    <actionProvider
+          class="org.evilbit.navigator.views.navigator.NavigatorActionProvider"
+          id="customplugin.views.navigator.NavigatorActionProvider">
+       <enablement>
+          <or>
+             <instanceof
+                   value="org.evilbit.navigator.views.navigator.data.PropertiesTreeData">
+             </instanceof>
+          </or>
+       </enablement>
+    </actionProvider>
  </extension>
    
 </plugin>

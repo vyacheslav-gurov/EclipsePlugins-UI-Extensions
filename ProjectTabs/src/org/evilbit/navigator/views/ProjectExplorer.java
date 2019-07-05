@@ -18,8 +18,9 @@ import org.evilbit.navigator.views.navigator.data.PropertiesTreeRootData;
  */
 
 public class ProjectExplorer extends CommonNavigator {
-	public static final String ID = "CustomPlugin.views.ProjectExplorer";
+	public static final String ID = "org.evilbit.navigator.views.ProjectExplorerId";
 
+	@Override
 	protected IAdaptable getInitialInput() {
 		return new PropertiesTreeRootData();
 	}

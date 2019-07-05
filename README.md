@@ -66,3 +66,12 @@ Eclipse EE Version: 2018-09 (4.9.0) Java 1.8.0_191
 Результат:
 
 ![Picture](Images/navigatorview4.jpg)
+
+#### 5. [Добавляем меню в Common navigator](https://github.com/firstevilbit/EclipsePlugins-UI-Extensions/tree/master/ProjectTabs/src/org/evilbit/navigator/views/navigator)
+В классе NavigatorActionProvider происходит инициалазация контекстного меню, а в классе AddNodeAction определяем условия активности пункта меню и действия, которое будет выполнятся.
+
+Первоисточник: http://codexe.net/eclipse/add-menu-to-common-navigator.html
+
+Результат:
+
+![Picture](Images/navigatorview5.jpg)

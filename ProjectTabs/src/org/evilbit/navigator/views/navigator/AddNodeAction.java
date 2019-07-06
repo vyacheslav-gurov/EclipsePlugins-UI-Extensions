@@ -5,6 +5,7 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.navigator.CommonNavigator;
 import org.evilbit.navigator.views.ProjectExplorer;
 import org.evilbit.navigator.views.navigator.data.PropertiesTreeData;
 import org.evilbit.navigator.views.navigator.data.PropertiesTreeParentData;
@@ -40,7 +41,7 @@ public class AddNodeAction extends Action {
 		PropertiesTreeData childNode = new PropertiesTreeData("new child", null, data.getProject());
 		data.addChild(childNode);
 		//refresh the navigator
-		ProjectExplorer navigator = (ProjectExplorer) page.findView(ProjectExplorer.ID);
+		CommonNavigator navigator = (CommonNavigator) page.findView(ProjectExplorer.ID);
 		navigator.getCommonViewer().refresh(data);
 	}
 }

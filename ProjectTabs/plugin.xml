@@ -127,6 +127,17 @@
              </instanceof>
           </or>
        </possibleChildren>
+       <commonSorter
+             class="org.evilbit.navigator.sorters.NavigatorSorter"
+             id="customplugin.sorters.NavigatorSorter">
+          <parentExpression>
+             <or>
+                <instanceof
+                      value="org.evilbit.navigator.views.navigator.data.PropertiesTreeData">
+                </instanceof>
+             </or>
+          </parentExpression>
+       </commonSorter>
     </navigatorContent>
     <actionProvider
           class="org.evilbit.navigator.views.navigator.NavigatorActionProvider"

@@ -75,3 +75,12 @@ Eclipse EE Version: 2018-09 (4.9.0) Java 1.8.0_191
 Результат:
 
 ![Picture](Images/navigatorview5.jpg)
+
+#### 6. [Добавляем сортировку в Common navigator](https://github.com/firstevilbit/EclipsePlugins-UI-Extensions/tree/master/ProjectTabs/src/org/evilbit/navigator/views/navigator/data)
+Сортировка реализована в классе NavigatorSorter в переопределённом методе compare. Метод будет извлекать номера из имён узлов и сортировать их в обратном порядке. Сортировка произойдёт автоматически сразу после получения дочерних элементов методом getChildren(Object parentElement).
+
+Первоисточник: http://codexe.net/eclipse/add-sorter-to-common-navigator.html
+
+Результат:
+
+![Picture](Images/navigatorview6.jpg)

@@ -84,3 +84,12 @@ Eclipse EE Version: 2018-09 (4.9.0) Java 1.8.0_191
 Результат:
 
 ![Picture](Images/navigatorview6.jpg)
+
+
+## 4. [Tabbed Properties](https://github.com/firstevilbit/EclipsePlugins-UI-Extensions/tree/master/ProjectTabs/src/org/evilbit/navigator/views/navigator/data)
+
+Первоисточник: http://codexe.net/eclipse/create-tabbed-property-view.html
+
+Результат:
+
+![Picture](Images/tabbedproperties.jpg)

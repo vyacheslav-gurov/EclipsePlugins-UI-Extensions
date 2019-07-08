@@ -2,6 +2,9 @@ package org.evilbit.navigator.views;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.ui.navigator.CommonNavigator;
+import org.eclipse.ui.views.properties.IPropertySheetPage;
+import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
+import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 import org.evilbit.navigator.views.navigator.data.PropertiesTreeRootData;
 
 /*
@@ -17,11 +20,25 @@ import org.evilbit.navigator.views.navigator.data.PropertiesTreeRootData;
  *
  */
 
-public class ProjectExplorer extends CommonNavigator {
+public class ProjectExplorer extends CommonNavigator implements ITabbedPropertySheetPageContributor {
 	public static final String ID = "org.evilbit.navigator.views.ProjectExplorerId";
 
 	@Override
 	protected IAdaptable getInitialInput() {
 		return new PropertiesTreeRootData();
+	}
+
+	@Override
+	public String getContributorId() {
+		return getSite().getId();
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public Object getAdapter(@SuppressWarnings("rawtypes") Class adapter) {
+		super.getAdapter(adapter);
+		if (adapter == IPropertySheetPage.class)
+			return new TabbedPropertySheetPage(this);
+		return super.getAdapter(adapter);
 	}
 }

@@ -62,6 +62,17 @@
           </insertionPoint>
        </popupMenu>
     </viewer>
+    <viewerActionBinding
+          viewerId="org.evilbit.navigator.views.ProjectExplorerId">
+       <includes>
+          <actionExtension
+                pattern="org.eclipse.ui.navigator.resources.*">
+          </actionExtension>
+          <actionExtension
+                pattern="customplugin.views.navigator.NavigatorActionProvider">
+          </actionExtension>
+       </includes>
+    </viewerActionBinding>
     <viewerContentBinding
           viewerId="org.evilbit.navigator.views.ProjectExplorerId">
        <includes>
@@ -76,17 +87,6 @@
           </contentExtension>
        </includes>
     </viewerContentBinding>
-    <viewerActionBinding
-          viewerId="org.evilbit.navigator.views.ProjectExplorerId">
-       <includes>
-          <actionExtension
-                pattern="org.eclipse.ui.navigator.resources.*">
-          </actionExtension>
-          <actionExtension
-                pattern="customplugin.views.navigator.NavigatorActionProvider">
-          </actionExtension>
-       </includes>
-    </viewerActionBinding>
  </extension>
  <extension
        point="org.eclipse.ui.navigator.navigatorContent">
@@ -150,6 +150,49 @@
           </or>
        </enablement>
     </actionProvider>
+ </extension>
+ <extension
+       point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+    <propertyContributor
+          contributorId="org.evilbit.navigator.views.ProjectExplorerId">
+       <propertyCategory
+             category="Project Explorer"></propertyCategory>
+    </propertyContributor>
+ </extension>
+ <extension
+       point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+    <propertyTabs
+          contributorId="org.evilbit.navigator.views.ProjectExplorerId">
+       <propertyTab
+             category="Project Explorer"
+             id="org.evilbit.propertyTab.name"
+             label="Name">
+       </propertyTab>
+       <propertyTab
+             afterTab="org.evilbit.propertyTab.name"
+             category="Project Explorer"
+             id="org.evilbit.propertyTab.description"
+             label="Description">
+       </propertyTab>
+    </propertyTabs>
+ </extension>
+ <extension
+       point="org.eclipse.ui.views.properties.tabbed.propertySections">
+    <propertySections
+          contributorId="org.evilbit.navigator.views.ProjectExplorerId">
+       <propertySection
+             class="org.evilbit.navigator.views.property.NameSection"
+             filter="org.evilbit.navigator.filters.NameSectionFilter"
+             id="org.evilbit.propertySection.nameSection"
+             tab="org.evilbit.propertyTab.name">
+       </propertySection>
+       <propertySection
+             class="org.evilbit.navigator.views.property.DescriptionSection"
+             filter="org.evilbit.navigator.filters.NameSectionFilter"
+             id="org.evilbit.propertySection.descriptionSection"
+             tab="org.evilbit.propertyTab.description">
+       </propertySection>
+    </propertySections>
  </extension>
    
 </plugin>
